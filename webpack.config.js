@@ -12,7 +12,7 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['.js', '.jsx', '.scss', '.sass'],
+        extensions: ['.js', '.jsx', '.scss', '.sass', '.css'],
         alias: {
             app: path.resolve(__dirname, 'app'),
             client: path.resolve(__dirname, 'client'),
@@ -27,7 +27,11 @@ module.exports = {
                 test: /\.jsx?$/,
                 include: [path.resolve(__dirname, 'client', 'javascripts')],
                 loader: 'babel-loader'
-            }
+            },
+            {
+                test: /\.css?$/,
+                loader: ['style-loader','css-loader']
+            },
         ]
     }
 };

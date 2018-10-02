@@ -1,7 +1,8 @@
 import React from 'react';
+import ReduxComponent from '../ReduxComponent/';
 
 const App = () => {
-    return <p> React works! :D </p>;
+    return <ReduxComponent chummaNonStateContent={'Passing props'} />;
 };
 
 export default App;
