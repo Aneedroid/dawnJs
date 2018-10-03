@@ -5,6 +5,7 @@ module.exports = {
     entry: {
         'bundle': ['./client/javascripts/index.js']
     },
+    devtool: 'inline-source-map',
     output: {
         filename: 'bundle.js',
         publicPath: '/',

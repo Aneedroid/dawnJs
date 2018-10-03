@@ -1,7 +1,6 @@
 'use strict';
 const colors = require('colors');
 const app = require('./app/app');
-const config = require('./app/config');
 
 // const server = app.listen(config.port); -- Fix this soon.
 const PORT = process.env.PORT || 8090;
