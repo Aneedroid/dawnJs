@@ -3,30 +3,45 @@ import PropTypes from 'prop-types';
 import './ReduxComponent.css'
 import Button from '@material-ui/core/Button';
 
-const renderReduxContent = (content) => {
-  return (
-        <p>{content}</p>
-  );
-};
+class ReduxComponent extends React.Component{
+    constructor(props) {
+        super(props);
+    }
 
-const ReduxComponent = ( { chummaNonStateContent, getContent, putContent } ) => {
-    putContent('Redux works too! :D :D');
-    const content = getContent;
-    return (
-        <div className='container' align="center">
-            {chummaNonStateContent ? <p> React works! :D </p> : <p> React does not work :'O </p>}
-            {getContent ? renderReduxContent(content) : null}
-            <Button variant="contained" color="primary">
-                Hello World
-            </Button>
-        </div>
-    );
-};
+    componentDidMount(){
+        const { putContent } = this.props;
+        putContent('Redux works too! :D :D');
+    }
+
+    onClickHandler(){
+        console.log('Called onClickHandler');
+        const { callSwapi } = this.props;
+        callSwapi(); 
+    }
+    
+    render() {
+        const { chummaNonStateContent, getContent, getSwapi } = this.props;
+        const content = getContent;
+        const swapiName = getSwapi.name;
+        return (
+            <div className='container' align="center">
+                {chummaNonStateContent ? <p> React works! :D </p> : <p> React does not work :'O </p>}
+                {getContent ? <p>{content}</p> : null}
+                <Button variant="contained" color="primary" onClick={() => this.onClickHandler()}>
+                    Click me to fetch data from SWAPI using Sagas!
+                </Button>
+                { swapiName ? <p>{swapiName}</p> : null }
+            </div>
+        );
+    }
+}
 
 ReduxComponent.propTypes = {
     chummaNonStateContent: PropTypes.string,
     getContent: PropTypes.string,
-    putContent: PropTypes.func
+    putContent: PropTypes.func,
+    callSwapi: PropTypes.func,
+    getSwapi: PropTypes.object
 };
 
 export default ReduxComponent;
