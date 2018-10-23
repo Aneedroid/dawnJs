@@ -7,7 +7,7 @@ const routes = require('./routes/route');
 const addInfo = require('./middlewares/add-info');
 const cors = require('./middlewares/cors');
 
-// app.use(addInfo); // Have not used this to pass config to react. Just an example for a middleware.
+// app.use(addInfo); // Have not used this to pass config to react yet. Just an example for a middleware.
 
 app.use(cors);
 

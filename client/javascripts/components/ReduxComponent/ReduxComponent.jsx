@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './ReduxComponent.css'
 import Button from '@material-ui/core/Button';
+
+import './ReduxComponent.css'
 
 class ReduxComponent extends React.Component{
     constructor(props) {
@@ -19,24 +20,24 @@ class ReduxComponent extends React.Component{
     }
     
     render() {
-        const { chummaNonStateContent, getContent, getSwapi } = this.props;
+        const { title, getContent, getSwapi } = this.props;
         const content = getContent;
         const swapiName = getSwapi.name;
         return (
-            <div className='container' align="center">
-                {chummaNonStateContent ? <p> React works! :D </p> : <p> React does not work :'O </p>}
-                {getContent ? <p>{content}</p> : null}
-                <Button variant="contained" color="primary" onClick={() => this.onClickHandler()}>
+            <div className='container' align='center'>
+                { title ? <h1> { title } </h1> : <h1> Oops! Something went wrong! </h1> }
+                { getContent ? <p>{ content }</p> : null }
+                <Button variant='contained' color='primary' onClick={() => this.onClickHandler()}>
                     Click me to fetch data from SWAPI using Sagas!
                 </Button>
-                { swapiName ? <p>{swapiName}</p> : null }
+                { swapiName ? <p>{ swapiName }</p> : null }
             </div>
         );
     }
 }
 
 ReduxComponent.propTypes = {
-    chummaNonStateContent: PropTypes.string,
+    title: PropTypes.string,
     getContent: PropTypes.string,
     putContent: PropTypes.func,
     callSwapi: PropTypes.func,
