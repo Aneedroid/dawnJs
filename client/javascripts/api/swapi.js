@@ -1,5 +1,6 @@
 import http from './http';
 
-export const getSwapi = () => {
-  return http.get('/people/1').then(res => res.data);
+export const getSwapi = async () => {
+    const response = await http.get('/swapico');
+    return response.data;
 };

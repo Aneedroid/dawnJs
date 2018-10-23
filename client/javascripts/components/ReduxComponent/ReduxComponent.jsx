@@ -14,7 +14,6 @@ class ReduxComponent extends React.Component{
     }
 
     onClickHandler(){
-        console.log('Called onClickHandler');
         const { callSwapi } = this.props;
         callSwapi(); 
     }
