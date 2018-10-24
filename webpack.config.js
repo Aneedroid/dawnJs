@@ -32,6 +32,14 @@ module.exports = {
       {
         test: /\.css?$/,
         loader: ['style-loader', 'css-loader'],
+      }, // Need the next 2 rules and loaders for react-semantic-ui
+      {
+        test: /\.less/,
+        loader: 'style!css!less',
+      },
+      {
+        test: /\.(png|jpg|gif|woff|svg|eot|ttf|woff2)$/,
+        loader: ['url-loader?limit=1024&name=[name]-[hash:8].[ext]!image-webpack', 'file-loader'],
       },
     ],
   },

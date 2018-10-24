@@ -6,8 +6,9 @@ import reducers from './reducers';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from './sagas/root-saga';
 import { composeWithDevTools } from 'redux-devtools-extension';
-
 import App from './components/App';
+
+import 'semantic-ui-css/semantic.min.css'; // React-semantic style import.
 
 const sagaMiddleware = createSagaMiddleware();
 
