@@ -3,6 +3,6 @@ import swapiSaga from './swapi-saga.js';
 
 export default function* rootSaga() {
   yield [
-    fork(swapiSaga)
+    fork(swapiSaga),
   ];
 }

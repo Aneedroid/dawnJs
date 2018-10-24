@@ -4,16 +4,18 @@ const path = require('path');
 const app = express();
 
 const routes = require('./routes/route');
-const addInfo = require('./middlewares/add-info');
+// const addInfo = require('./middlewares/add-info');
 const cors = require('./middlewares/cors');
 
-// app.use(addInfo); // Have not used this to pass config to react yet. Just an example for a middleware.
+// app.use(addInfo);
+// Have not used this to pass config to react yet.
+// Just an example for a middleware.
 
 app.use(cors);
 
 app.engine('.html', exphbs({
-    defaultLayout: 'layout',
-    extname: '.html'
+  defaultLayout: 'layout',
+  extname: '.html',
 }));
 
 app.set('view engine', '.html');
@@ -23,7 +25,7 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use('/app', routes);
 
 app.get('/app/home', (req, res) => {
-    return res.render('home');
+  return res.render('home');
 });
 
 module.exports = app;

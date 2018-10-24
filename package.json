@@ -8,7 +8,8 @@
     "start-dev": "nodemon --config ./config/nodemon.json --exec npm run start-dev-server",
     "start-dev-server": "NODE_ENV=local node server",
     "start:dev": "npm-run-all --parallel build start-dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "eslint": "eslint --ignore-path .gitignore .",
+    "eslint:fix": "npm run eslint -- --fix"
   },
   "keywords": [
     "dawnJs"
@@ -39,11 +40,19 @@
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "colors": "^1.3.2",
+    "eslint": "^5.7.0",
+    "eslint-config-fbjs": "^2.1.0",
+    "eslint-plugin-babel": "^5.2.1",
+    "eslint-plugin-flowtype": "^3.0.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-relay": "0.0.28",
     "nodemon": "^1.4.1",
     "redux-devtools-extension": "^2.13.5",
     "webpack": "^4.20.2",

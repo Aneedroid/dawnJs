@@ -7,8 +7,7 @@ export const getSwapiData = function* () {
   try {
     const swapi = yield call(getSwapi);
     yield put(putSwapiToState(swapi));
-  }
-  catch (error){
+  } catch (error) {
     yield put(putSwapiToState(null));
   }
 };
