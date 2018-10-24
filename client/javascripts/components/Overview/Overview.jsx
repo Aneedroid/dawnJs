@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Overview.css';
 
-import { Button } from 'semantic-ui-react';
+import { Header, Segment, Card, Button } from 'semantic-ui-react';
 
 class Overview extends React.Component {
   constructor(props) {
@@ -18,19 +18,32 @@ class Overview extends React.Component {
     const { findHero } = this.props;
     findHero();
   }
+
+  renderHeroCard() {
+    const { getHero } = this.props;
+    return (
+      <Card>
+        <Card.Content>
+          <Card.Header> { getHero.name } </Card.Header>
+          <Card.Meta> { getHero.gender } </Card.Meta>
+        </Card.Content>
+      </Card>
+    );
+  }
     
   render() {
     const { title, getSubTitle, getHero } = this.props;
-    const content = getSubTitle;
-    const heroName = getHero.name;
     return (
-      <div className="container" align="center">
-        { title ? <h1> { title } </h1> : <h1> Oops! Something went wrong! </h1> }
-        { getSubTitle ? <p> { content } </p> : null }
-        <Button onClick={() => this.onClickHandler()}>
-          Click me to fetch data from SWAPI using Sagas!
+      <div className="overview-container" align="center">
+        <Header as="h1" color="orange" block inverted> { title }
+        </Header>
+        <Segment>
+          { getSubTitle }
+        </Segment>
+        <Button inverted color="red" onClick={() => this.onClickHandler()}>
+          Just another button
         </Button>
-        { heroName ? <p> { heroName } </p> : null }
+        { getHero.name ? this.renderHeroCard() : null }
       </div>
     );
   }
