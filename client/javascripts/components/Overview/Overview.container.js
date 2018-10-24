@@ -4,15 +4,15 @@ import { getContentFromState, getSwapiFromState } from 'client/javascripts/utils
 
 const mapStateToProps = (state) => {
     return {
-        getContent: getContentFromState(state),
-        getSwapi: getSwapiFromState(state)
+        getSubTitle: getContentFromState(state),
+        getHero: getSwapiFromState(state)
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        putContent: ( contentString ) => dispatch(putContentToState(contentString)),
-        callSwapi: () => dispatch(getSwapi())
+        setSubTitle: ( contentString ) => dispatch(putContentToState(contentString)),
+        findHero: () => dispatch(getSwapi())
     };
 };
 

@@ -1,12 +1,12 @@
 import React from 'react';
-import ReduxComponent from '../ReduxComponent/';
+import Overview from '../Overview/';
 
 import './App.css'
 
 const App = () => {
     return (
         <div>
-            <ReduxComponent title={'dawnJs'} />
+            <Overview title={'dawnJs'} />
         </div>
     );
 };
