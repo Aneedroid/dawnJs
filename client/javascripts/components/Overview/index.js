@@ -1,4 +1,1 @@
-import Overview from './Overview';
-import container from './Overview.container';
-
-export default container(Overview);
+export { default } from './Overview';

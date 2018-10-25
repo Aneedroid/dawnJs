@@ -7,6 +7,7 @@ import createSagaMiddleware from 'redux-saga';
 import rootSaga from './sagas/root-saga';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import App from './components/App';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import 'semantic-ui-css/semantic.min.css'; // React-semantic style import.
 
@@ -20,7 +21,9 @@ sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </Provider>
   , document.getElementById('app')
 );
