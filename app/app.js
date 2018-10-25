@@ -28,4 +28,8 @@ app.get('/app/home', (req, res) => {
   return res.render('home');
 });
 
+app.get('/app/*', async (req, res) => {
+  return res.render('home');
+});
+
 module.exports = app;
