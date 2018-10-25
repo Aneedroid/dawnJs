@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Swapi.css';
 
-import { Card, Button } from 'semantic-ui-react';
+import { Container, Card, Button } from 'semantic-ui-react';
 
 class Swapi extends React.Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class Swapi extends React.Component {
   renderHeroCard() {
     const { getHero } = this.props;
     return (
-      <Card>
+      <Card raised inverted color="orange">
         <Card.Content>
           <Card.Header> { getHero.name } </Card.Header>
           <Card.Meta> { getHero.gender } </Card.Meta>
@@ -32,10 +32,12 @@ class Swapi extends React.Component {
     const { getHero } = this.props;
     return (
       <div className="overview-container" align="center">
-        <Button inverted color="red" onClick={() => this.onClickHandler()}>
+        <Container>
+          <Button inverted color="black" onClick={() => this.onClickHandler()}>
           Just another button
-        </Button>
-        { getHero.name ? this.renderHeroCard() : null }
+          </Button>
+          { getHero.name ? this.renderHeroCard() : null }
+        </Container>
       </div>
     );
   }

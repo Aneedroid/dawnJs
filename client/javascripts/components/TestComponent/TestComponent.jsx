@@ -1,8 +1,11 @@
 import React from 'react';
+import { Container } from 'semantic-ui-react';
 
 const TestComponent = () => {
   return (
-    <h1> Hello from TestComponent! </h1>
+    <Container text fluid>
+      <h1 align="center"> Hello from TestComponent! </h1>
+    </Container>
   );
 };
 
