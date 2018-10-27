@@ -9,7 +9,9 @@
     "start-dev-server": "NODE_ENV=local node server",
     "start:dev": "npm-run-all --parallel build start-dev",
     "eslint": "eslint --ignore-path .gitignore .",
-    "eslint:fix": "npm run eslint -- --fix"
+    "eslint:fix": "npm run eslint -- --fix",
+    "test": "jest test",
+    "coverage": "jest --collectCoverageFrom=test/**.js --coverage test"
   },
   "keywords": [
     "dawnJs"
@@ -18,8 +20,10 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-jest": "^23.6.0",
     "babel-polyfill": "^6.26.0",
     "css-loader": "^1.0.0",
+    "eslint-plugin-jest": "^21.26.2",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "file-loader": "^2.0.0",
@@ -36,6 +40,7 @@
     "react-router-redux": "^4.0.8",
     "redux": "^4.0.0",
     "redux-saga": "^0.16.0",
+    "regenerator-runtime": "^0.12.1",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-less": "^2.4.1",
     "semantic-ui-react": "^0.83.0",
@@ -60,6 +65,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-relay": "0.0.28",
+    "jest": "^23.6.0",
     "nodemon": "^1.4.1",
     "redux-devtools-extension": "^2.13.5",
     "webpack": "^4.20.2",
