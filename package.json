@@ -24,7 +24,7 @@
     "babel-polyfill": "^6.26.0",
     "css-loader": "^1.0.0",
     "eslint-plugin-jest": "^21.26.2",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "express-handlebars": "^3.0.0",
     "file-loader": "^2.0.0",
     "less-loader": "^4.1.0",
